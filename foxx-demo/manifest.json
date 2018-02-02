@@ -1,0 +1,8 @@
+{
+  "name": "Foxx Demo",
+  "version": "0.0.0",
+  "engines": {
+    "arangodb": "^3.3.0"
+  },
+  "main": "index.js"
+}
