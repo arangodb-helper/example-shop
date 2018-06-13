@@ -23,6 +23,26 @@ and then in the bottom right corner "Import Queries". Choose the file
 `shopQueries.json`. Alternatively, the queries are also as JavaScript
 code in the file `shopQueries.js`.
 
+To generate more data, run
+
+    docker run -it --net=host -v `pwd`:/mnt arangodb arangosh --javascript.execute /mnt/moreData.js
+
+This creates 100000 random customers, 100000 random items, 100000 sales,
+1000 shopping baskets and 100000 reviews with some likes.
+
+To modify these numbers, set the following environment variables in the
+`docker run` call:
+
+    NRUSERS
+    NRITEMS
+    NRSALES
+    NRREVIEWS
+    NRSALES
+
+Use, for example, `-e NRUSERS=1000000` in `docker run` for `moreData.js`
+above.
+
+
 Data model
 ----------
 
